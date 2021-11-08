@@ -28,7 +28,7 @@ with Popen(['sbatch'] + firstargs + ['notebookjob.sh'] + ports + secondargs, std
     jobline = proc.stdout.readline().decode()
     jobline = jobline.strip()
     vals = jobline.split(';')
-    jobid = int(vals[0])
+    jobid = int(float(vals[0]))
     joblist = []
     if len(vals) > 1:
         jobcluster = vals[1]
